@@ -2,7 +2,13 @@
   <main>
     <form class="form-search">
       <h1>Id3#index</h1>
-      <input type="text" name="q" class="form-control" placeholder="Search the id3tag info" autofocus>
+      <input type="text" name="q" class="form-control" placeholder="Search the id3tag info" <% if @query %>value="<%= @query %>"<% end %> autofocus>
+      <% if @query %>
+      <div>
+        <% @count||=0 %>
+        <h5><%= @count %> records.</h5>
+      </div>
+      <% end %>
     </form>
   </main>
 </div>
