@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @id3.title %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @id3.artist %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @id3.album %>
+</p>
+
+<%= link_to 'Edit', edit_id3_path(@id3) %> |
+<%= link_to 'Back', id3s_path %>
