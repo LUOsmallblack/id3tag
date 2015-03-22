@@ -1,0 +1,28 @@
+<div class="container">
+  <main>
+    <form class="form-search">
+      <h1>Id3#index</h1>
+      <input type="text" name="q" class="form-control" placeholder="Search the id3tag info" <% if @query %>value="<%= @query %>"<% end %> autofocus>
+      <% if @query %>
+      <div>
+        <% if @id3s %>
+        <h5><%= @id3s.length %> records.</h5>
+        <% end %>
+      </div>
+      <% end %>
+    </form>
+    <tbody>
+      <% @id3s||=[] %>
+      <% @id3s.each do |id3| %>
+        <tr>
+          <td><%= id3.title %></td>
+          <td><%= id3.artist %></td>
+          <td><%= id3.album %></td>
+          <td><%= link_to 'Show', id3 %></td>
+          <td><%= link_to 'Edit', edit_id3_path(id3) %></td>
+          <td><%= link_to 'Destroy', id3, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </main>
+</div>

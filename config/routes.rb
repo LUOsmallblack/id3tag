@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
+  get 'id3s/query'
+
   resources :id3s
-  
-  get 'id3/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'id3#index'
+  root 'id3s#query'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

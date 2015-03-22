@@ -1,6 +1,15 @@
 class Id3sController < ApplicationController
   before_action :set_id3, only: [:show, :edit, :update, :destroy]
 
+  def query
+    @query = params[:q]
+    if @query.nil? || @query.empty?
+      return
+    end
+    regex = /#{@query}/i
+    @id3s = Id3.or({title: regex}, {artist: regex}, {album: regex})
+  end
+
   # GET /id3s
   # GET /id3s.json
   def index
