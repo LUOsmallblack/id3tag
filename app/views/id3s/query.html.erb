@@ -11,18 +11,29 @@
       </div>
       <% end %>
     </form>
-    <tbody>
+    <table class="musiclist table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+        </tr>
+      </thead>
+      <tbody>
       <% @id3s||=[] %>
       <% @id3s.each do |id3| %>
         <tr>
           <td><%= id3.title %></td>
           <td><%= id3.artist %></td>
           <td><%= id3.album %></td>
-          <td><%= link_to 'Show', id3 %></td>
-          <td><%= link_to 'Edit', edit_id3_path(id3) %></td>
-          <td><%= link_to 'Destroy', id3, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <!--td>
+            <%= link_to 'Show', id3 %>
+            <%= link_to 'Edit', edit_id3_path(id3) %>
+            <%= link_to 'Destroy', id3, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td-->
         </tr>
       <% end %>
-    </tbody>
+      </tbody>
+    </table>
   </main>
 </div>
