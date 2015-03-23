@@ -1,0 +1,39 @@
+<div class="container">
+  <main>
+    <form class="form-search">
+      <h1>Uriinfo#index</h1>
+      <input type="text" name="q" class="form-control" placeholder="Enter the uri to parse" <% if @query %>value="<%= @query %>"<% end %> autofocus>
+      <% if @query %>
+      <div>
+        <% if @uriinfo %>
+        <h5><%= @uriinfo %> find.</h5>
+        <% end %>
+      </div>
+      <% end %>
+    </form>
+    <table class="musiclist table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @id3s||=[] %>
+      <% @id3s.each do |id3| %>
+        <tr>
+          <td><%= id3.title %></td>
+          <td><%= id3.artist %></td>
+          <td><%= id3.album %></td>
+          <!--td>
+            <%= link_to 'Show', id3 %>
+            <%= link_to 'Edit', edit_id3_path(id3) %>
+            <%= link_to 'Destroy', id3, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td-->
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </main>
+</div>

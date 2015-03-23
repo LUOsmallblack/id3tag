@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :uriinfos
-
   get 'id3s/query'
+  get 'uriinfos/query'
 
+  resources :uriinfos
   resources :id3s
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,16 @@
 class UriinfosController < ApplicationController
+  include UriinfosHelper
   before_action :set_uriinfo, only: [:show, :edit, :update, :destroy]
+
+  def query
+    @query = params[:q]
+    if @query.nil? || @query.empty?
+      return
+    end
+    @uriinfo = geturiinfo(@query)
+    regex = /#{@query}/i
+    @id3s = Id3.or({title: regex}, {artist: regex}, {album: regex})
+  end
 
   # GET /uriinfos
   # GET /uriinfos.json
