@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @uriinfo.name %>
+</p>
+
+<p>
+  <strong>Uri:</strong>
+  <%= @uriinfo.uri %>
+</p>
+
+<p>
+  <strong>Originurl:</strong>
+  <%= @uriinfo.originurl %>
+</p>
+
+<%= link_to 'Edit', edit_uriinfo_path(@uriinfo) %> |
+<%= link_to 'Back', uriinfos_path %>

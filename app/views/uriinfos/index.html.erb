@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Uriinfos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uri</th>
+      <th>Originurl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uriinfos.each do |uriinfo| %>
+      <tr>
+        <td><%= uriinfo.name %></td>
+        <td><%= uriinfo.uri %></td>
+        <td><%= uriinfo.originurl %></td>
+        <td><%= link_to 'Show', uriinfo %></td>
+        <td><%= link_to 'Edit', edit_uriinfo_path(uriinfo) %></td>
+        <td><%= link_to 'Destroy', uriinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uriinfo', new_uriinfo_path %>

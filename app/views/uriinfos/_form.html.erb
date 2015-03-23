@@ -1,0 +1,29 @@
+<%= form_for(@uriinfo) do |f| %>
+  <% if @uriinfo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uriinfo.errors.count, "error") %> prohibited this uriinfo from being saved:</h2>
+
+      <ul>
+      <% @uriinfo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :uri %><br>
+    <%= f.text_field :uri %>
+  </div>
+  <div class="field">
+    <%= f.label :originurl %><br>
+    <%= f.text_field :originurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

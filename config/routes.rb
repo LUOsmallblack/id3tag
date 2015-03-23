@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :uriinfos
+
   get 'id3s/query'
 
   resources :id3s
