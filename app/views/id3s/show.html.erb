@@ -15,5 +15,12 @@
   <%= @id3.album %>
 </p>
 
+<p>
+  <strong>Uriinfos:</strong>
+  <% @id3.uriinfos.each do |uri| %>
+    <%= link_to uri.name, uri.uri %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_id3_path(@id3) %> |
 <%= link_to 'Back', id3s_path %>

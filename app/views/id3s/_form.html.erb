@@ -23,6 +23,10 @@
     <%= f.label :album %><br>
     <%= f.text_field :album %>
   </div>
+  <div class="field">
+    <%= f.label "All Uriinfos" %><br />
+    <%= f.collection_select :uriinfo_ids, Uriinfo.all, :id, :uri, {:include_blank => 'Select', include_hidden: false}, {:multiple => true} %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

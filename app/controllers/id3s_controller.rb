@@ -28,6 +28,7 @@ class Id3sController < ApplicationController
 
   # GET /id3s/1/edit
   def edit
+    @uriinfos = Uriinfo.all
   end
 
   # POST /id3s
@@ -78,6 +79,6 @@ class Id3sController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def id3_params
-      params.require(:id3).permit(:title, :artist, :album)
+      params.require(:id3).permit(:title, :artist, :album, :uriinfo_ids => [])
     end
 end
