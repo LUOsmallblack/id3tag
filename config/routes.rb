@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'id3s/query'
-  get 'uriinfos/query'
+  get '/id3s/query'
+  get '/uriinfos/query'
 
   resources :uriinfos
   resources :id3s
 
+  get '/proxy/:domain/:id', to: 'proxy#hotlink'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
