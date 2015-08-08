@@ -19,3 +19,6 @@ id3.save
 
 music2 = Uriinfo.create name: 'Hudie', uri: 'http://id3tag.orangez.cc/proxy/baidu/1111129', originurl: 'http://music.baidu.com/song/1111129/520610f4590854dca4d3', id3s: [id3]
 puts 'Second game created: ' << music2.name
+
+admin = User.create username: "admin", password: "ZXC142857"
+puts 'admin created: ' << admin.username
